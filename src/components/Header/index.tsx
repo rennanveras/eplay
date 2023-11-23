@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 import * as S from './styles'
 
 import logo from '../../assets/images/logo.svg'
@@ -11,7 +13,7 @@ const Header = () => {
         <nav>
           <S.ListLinks>
             <li>
-              <a href="#">Categoria</a>
+              <Link to="/categorias">Categorias</Link>
             </li>
             <li>
               <a href="#">Novidades</a>

@@ -1,32 +1,19 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom'
 
-import Banner from './components/Banner'
 import Header from './components/Header'
 import * as Sg from './styles'
-import ProductsList from './components/ProductList'
 
-const rotas = createBrowserRouter([
-  {
-    path: '/',
-    element: (
-      <>
-        <Banner />
-        <ProductsList background="gray" title="Promoções" />
-        <ProductsList background="black" title="Em breve" />
-      </>
-    )
-  }
-])
+import Rotas from './routes'
 
 function App() {
   return (
-    <>
+    <BrowserRouter>
       <Sg.GlobalStyle />
       <div className="container">
         <Header />
       </div>
-      <RouterProvider router={rotas} />
-    </>
+      <Rotas />
+    </BrowserRouter>
   )
 }
 
