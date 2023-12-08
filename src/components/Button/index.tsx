@@ -1,4 +1,4 @@
-import { ButtonLink } from './styles'
+import * as S from './styles'
 
 type Props = {
   type: 'button' | 'link'
@@ -6,20 +6,33 @@ type Props = {
   to?: string
   onClick?: () => void
   children: React.ReactNode
+  variant?: 'primary' | 'secondary'
 }
 
-const Button = ({ type = 'button', title, to, onClick, children }: Props) => {
+const Button = ({
+  type = 'button',
+  title,
+  to,
+  onClick,
+  children,
+  variant = 'primary'
+}: Props) => {
   if (type === 'button') {
     return (
-      <Button type="button" title={title} onClick={onClick}>
+      <S.ButtonStyle
+        variant={variant}
+        type="button"
+        title={title}
+        onClick={onClick}
+      >
         {children}
-      </Button>
+      </S.ButtonStyle>
     )
   } else {
     return (
-      <ButtonLink type="button" title={title} to={to as string}>
+      <S.ButtonLink type="button" title={title} to={to as string}>
         {children}
-      </ButtonLink>
+      </S.ButtonLink>
     )
   }
 }
