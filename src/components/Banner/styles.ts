@@ -13,10 +13,20 @@ export const Imagem = styled.div`
   position: relative;
   padding-bottom: 54px;
 
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
+  }
+
   .container {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+    z-index: 1;
   }
 
   ${TagStyle} {

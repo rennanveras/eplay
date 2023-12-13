@@ -28,3 +28,21 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0 auto;
   }
 `
+
+export const Loading = styled.div`
+  border: 5px solid #0585e2;
+  border-radius: 50%;
+  border-bottom: 5px solid transparent;
+  height: 60px;
+  width: 60px;
+  animation: spinning 1s linear infinite;
+  margin: 60px auto;
+  @keyframes spinning {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+`
