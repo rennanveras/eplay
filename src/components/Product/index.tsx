@@ -22,9 +22,10 @@ const Product = ({
 }: Props) => {
   const getDescription = (description: string) => {
     return description.length > 95
-      ? `${description.slice(0, 92)}...`
+      ? `${description.slice(0, 86)}...`
       : description
   }
+
   return (
     <S.CardProduct to={`/produto/${id}`}>
       <img src={image} alt="" />

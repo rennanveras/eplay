@@ -1,4 +1,4 @@
-import { Game } from '../../pages/Home'
+import Game from '../../types/Game'
 
 import Section from '../Section'
 import Product from '../Product'
