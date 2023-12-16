@@ -4,9 +4,11 @@ import { BrowserRouter } from 'react-router-dom'
 import Header from './components/Header'
 import * as Sg from './styles'
 
+import { store } from './store'
+
 import Rotas from './routes'
 import Footer from './components/Footer'
-import { store } from './store'
+import Cart from './components/Cart'
 
 function App() {
   return (
@@ -19,6 +21,7 @@ function App() {
         <Rotas />
         <Footer />
       </BrowserRouter>
+      <Cart />
     </Provider>
   )
 }
