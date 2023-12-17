@@ -28,8 +28,9 @@ export const ListLinks = styled.ul`
   margin-left: 40px;
 `
 
-export const LinkCart = styled.a`
+export const CartButton = styled.a`
   display: flex;
   align-items: center;
   gap: 16px;
+  cursor: pointer;
 `

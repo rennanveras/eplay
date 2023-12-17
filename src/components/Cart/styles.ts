@@ -9,11 +9,17 @@ import close from '../../assets/images/gadgets/close.png'
 export const CartContainer = styled.div`
   position: fixed;
   inset: 0;
-  width: 100%;
+  max-width: 100%;
+  width: 0;
   height: 100%;
-  display: flex;
+  display: none;
   justify-content: flex-end;
   z-index: 1;
+
+  &.is-open {
+    display: flex;
+    width: 100%;
+  }
 `
 
 export const Overlay = styled.div`
@@ -66,6 +72,7 @@ export const CartItem = styled.li`
   img {
     height: 80px;
     width: 80px;
+    object-fit: cover;
   }
 
   h3 {

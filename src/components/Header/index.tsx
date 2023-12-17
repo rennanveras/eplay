@@ -5,7 +5,18 @@ import * as S from './styles'
 import logo from '../../assets/images/logo.svg'
 import carinho from '../../assets/images/carrinho.svg'
 
+import { open } from '../../store/reducers/cart'
+import { useDispatch, useSelector } from 'react-redux'
+import { RootReducer } from '../../store'
+
 const Header = () => {
+  const dispatch = useDispatch()
+  const { items } = useSelector((state: RootReducer) => state.cart)
+
+  const openCart = () => {
+    dispatch(open())
+  }
+
   return (
     <S.HeaderBar>
       <div>
@@ -26,10 +37,10 @@ const Header = () => {
           </S.ListLinks>
         </nav>
       </div>
-      <S.LinkCart href="#">
-        0 - Produto(s)
+      <S.CartButton onClick={openCart}>
+        {items.length} - {items.length > 1 ? 'Produtos' : 'Produto'}
         <img src={carinho} alt="Carrinho de compras" />
-      </S.LinkCart>
+      </S.CartButton>
     </S.HeaderBar>
   )
 }
