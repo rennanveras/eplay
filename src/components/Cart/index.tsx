@@ -39,8 +39,10 @@ const Cart = () => {
               <img src={game.media.thumbnail} alt={game.name} />
               <div>
                 <h3>{game.name}</h3>
-                <Tag>{game.details.category}</Tag>
-                <Tag>{game.details.system}</Tag>
+                <div className="area-tags">
+                  <Tag>{game.details.category}</Tag>
+                  <Tag>{game.details.system}</Tag>
+                </div>
                 <span>{formataPreco(game.prices.current)}</span>
               </div>
               <button type="button" onClick={() => removeItem(game.id)} />

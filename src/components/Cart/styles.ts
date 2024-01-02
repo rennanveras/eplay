@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { cores } from '../../styles'
+import { breakpoint, cores } from '../../styles'
 import { TagStyle } from '../Tag/styles'
 import { ButtonStyle } from '../Button/styles'
 
@@ -41,6 +41,10 @@ export const Sidebar = styled.aside`
   ${ButtonStyle} {
     width: 100%;
   }
+
+  @media (max-width: ${breakpoint.tablet}) {
+    width: 260px;
+  }
 `
 
 export const Quantity = styled.p`
@@ -69,6 +73,10 @@ export const CartItem = styled.li`
   border-bottom: 1px solid ${cores.cinzaClaro};
   padding: 8px 0;
 
+  div {
+    max-width: 200px;
+  }
+
   img {
     height: 80px;
     width: 80px;
@@ -86,8 +94,12 @@ export const CartItem = styled.li`
     display: block;
   }
 
-  ${TagStyle} {
-    margin: 8px 8px 16px 0;
+  .area-tags {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
   }
 
   button {
@@ -100,5 +112,20 @@ export const CartItem = styled.li`
     right: 0;
     top: 8px;
     cursor: pointer;
+  }
+
+  @media (max-width: ${breakpoint.tablet}) {
+    div {
+      max-width: 100px;
+    }
+
+    img {
+      height: 70px;
+      width: 70px;
+    }
+
+    h3 {
+      font-size: 14px;
+    }
   }
 `

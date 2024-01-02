@@ -9,6 +9,7 @@ export type Props = {
   title: string
   background: 'gray' | 'black'
   games: Game[]
+  id?: string
 }
 
 export const formataPreco = (preco = 0) => {
@@ -18,7 +19,7 @@ export const formataPreco = (preco = 0) => {
   }).format(preco)
 }
 
-const ProductsList = ({ title, background, games }: Props) => {
+const ProductsList = ({ title, background, games, id }: Props) => {
   const getGameTags = (game: Game) => {
     const tags = []
 
@@ -38,7 +39,7 @@ const ProductsList = ({ title, background, games }: Props) => {
   }
 
   return (
-    <Section title={title} background={background}>
+    <Section id={id} title={title} background={background}>
       <S.List>
         {games.map((game) => (
           <li key={game.id}>
