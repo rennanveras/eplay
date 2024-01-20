@@ -9,6 +9,7 @@ export const Container = styled.footer`
   padding: 32px 0;
   font-size: 14px;
   color: ${cores.branca};
+  margin-top: 40px;
 `
 
 export const SectionTitle = styled.h4`

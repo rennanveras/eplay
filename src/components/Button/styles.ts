@@ -15,6 +15,7 @@ export const ButtonStyle = styled.button<Props>`
   border-radius: 8px;
   border: ${(props) =>
     props.variant === 'primary' ? `2px solid ${cores.branca}` : 'none'};
+  cursor: pointer;
 `
 export const ButtonLink = styled(Link)`
   padding: 8px 16px;
@@ -23,4 +24,5 @@ export const ButtonLink = styled(Link)`
   color: ${cores.branca};
   font-weight: bold;
   border-radius: 8px;
+  cursor: pointer;
 `
