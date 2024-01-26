@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { HashLink } from 'react-router-hash-link'
 
 import * as S from './styles'
 
@@ -21,19 +22,16 @@ const Header = () => {
 
   const navLinks = [
     {
-      to: '/categorias',
-      label: 'Categorias',
-      id: 1
-    },
-    {
       to: '/#on-sale',
       label: 'Novidades',
-      id: 2
+      title: 'Clique aqui para acessar a seção de novidades',
+      id: 1
     },
     {
       to: '/#coming-soon',
       label: 'Promoções',
-      id: 3
+      title: 'Clique aqui para acessar a seção de promoções',
+      id: 2
     }
   ]
 
@@ -47,19 +45,31 @@ const Header = () => {
             <span />
           </S.Hamburguer>
           <Link to="/">
-            <img src={logo} alt="EPLAY" />
+            <h1>
+              <img src={logo} alt="EPLAY" />
+            </h1>
           </Link>
           <nav>
             <S.ListLinks>
+              <S.LinkItem>
+                <Link
+                  title="Clique aqui para acessar a página de categorias"
+                  to="/categorias"
+                >
+                  Categorias
+                </Link>
+              </S.LinkItem>
               {navLinks.map((itemsNav) => (
                 <S.LinkItem key={itemsNav.id}>
-                  <Link to={itemsNav.to}>{itemsNav.label}</Link>
+                  <HashLink title={itemsNav.title} to={itemsNav.to}>
+                    {itemsNav.label}
+                  </HashLink>
                 </S.LinkItem>
               ))}
             </S.ListLinks>
           </nav>
         </div>
-        <S.CartButton onClick={openCart}>
+        <S.CartButton role="button" onClick={openCart}>
           <div>
             {items.length}
             <span> - {items.length > 1 ? 'Produtos' : 'Produto'}</span>
@@ -69,9 +79,24 @@ const Header = () => {
       </S.HeaderRow>
       <S.NavMobile className={isMenuOpen ? 'is-open' : ''}>
         <S.ListLinks>
+          <S.LinkItem>
+            <Link
+              title="Clique aqui para acessar a página de categorias"
+              to="/categorias"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Categorias
+            </Link>
+          </S.LinkItem>
           {navLinks.map((itemsNav) => (
             <S.LinkItem key={itemsNav.id}>
-              <Link to={itemsNav.to}>{itemsNav.label}</Link>
+              <HashLink
+                to={itemsNav.to}
+                title={itemsNav.title}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {itemsNav.label}
+              </HashLink>
             </S.LinkItem>
           ))}
         </S.ListLinks>

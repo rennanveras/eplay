@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { breakpoint, cores } from '../../styles'
+import { breakpoint, colors } from '../../styles'
 
 export const ListLinks = styled.ul`
   display: flex;
@@ -14,14 +14,19 @@ export const ListLinks = styled.ul`
 `
 
 export const HeaderBar = styled.header`
-  background-color: ${cores.cinza};
+  background-color: ${colors.gray};
   border-radius: 16px;
   padding: 24px;
   margin-bottom: 80px;
 
-  a {
-    color: ${cores.branca};
+  a,
+  span {
+    color: ${colors.white};
     font-weight: bold;
+  }
+
+  h1 {
+    line-height: 0;
   }
 `
 
@@ -45,7 +50,7 @@ export const HeaderRow = styled.div`
   }
 `
 
-export const CartButton = styled.a`
+export const CartButton = styled.span`
   display: flex;
   align-items: center;
   gap: 16px;
@@ -81,7 +86,7 @@ export const Hamburguer = styled.div`
     height: 2px;
     display: block;
     width: 100%;
-    background-color: ${cores.branca};
+    background-color: ${colors.white};
     margin-bottom: 6px;
   }
 
